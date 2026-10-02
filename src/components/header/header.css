@@ -7,15 +7,10 @@ header {
   max-width: 50rem;
   margin: 0 auto 2rem auto;
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    #40702b,
-    #2d8125
-  );
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1rem;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
 }
 
 img {
