@@ -15,5 +15,6 @@ export class App {
 
   onSelectUser(id: string) {
     console.log(id);
+
   }
 }
