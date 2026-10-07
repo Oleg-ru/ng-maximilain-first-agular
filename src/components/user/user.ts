@@ -1,4 +1,4 @@
-import { Component, computed, Input, signal } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,9 +7,12 @@ import { Component, computed, Input, signal } from '@angular/core';
   templateUrl: './user.html',
 })
 export class User {
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  avatar = input.required<string>();
+  name = input.required<string>();
+  id = input.required<string>();
 
   onSelectUser() {}
 }
