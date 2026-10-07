@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,6 +7,10 @@ import { Component, computed, signal } from '@angular/core';
   templateUrl: './user.html',
 })
 export class User {
+  @Input() avatar!: string;
+  @Input() name!: string;
+  @Input() id!: string;
+
   onSelectUser() {
   }
 }
