@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, output, Output } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -14,7 +14,7 @@ export class User {
   name = input.required<string>();
   id = input.required<string>();
 
-   @Output() select = new EventEmitter();
+   @Output() select = new EventEmitter<string>();
   //select = output<string>();
 
   onSelectUser() {
