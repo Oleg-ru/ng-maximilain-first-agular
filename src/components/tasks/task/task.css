@@ -80,6 +80,7 @@ article > p:not(.actions) {
   box-shadow: 0 4px 12px rgba(56, 7, 116, 0.45);
 }
 
+
 .actions button:active {
   transform: scale(0.97);
   box-shadow: 0 1px 4px rgba(56, 7, 116, 0.4);
