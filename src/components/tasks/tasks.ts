@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {Task} from './task/task';
 import {DUMMY_TASKS} from './dummy-tasks';
+import {TaskType} from "./task.module";
 
 @Component({
   imports: [Task],
@@ -12,7 +13,14 @@ export class Tasks {
   @Input({ required: true }) name?: string;
   @Input({required: true}) userId?: string;
 
+  tasks: TaskType[] = [...DUMMY_TASKS];
+
   getUserTasks() {
-    return DUMMY_TASKS.filter((task) => task.userId === this.userId);
+    return this.tasks.filter((task) => task.userId === this.userId);
+  }
+
+  onCompleteTask(id: String) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
+    console.log(this.tasks)
   }
 }
