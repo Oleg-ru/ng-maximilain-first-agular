@@ -1,7 +1,6 @@
 <div>
-  <button (click)="onSelectUser()">
+  <button [class.active]="selected" (click)="onSelectUser()">
     <img [src]="user.avatar" [alt]="user.id + '-avatar_'">
     <span>{{user.name}}</span>
   </button>
-
 </div>

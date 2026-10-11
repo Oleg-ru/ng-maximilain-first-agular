@@ -9,6 +9,7 @@ import { UserType } from './user.model';
 })
 export class User {
   @Input({ required: true }) user!: UserType;
+  @Input({required: true}) selected!: boolean;
 
   // avatar = input.required<string>();
   // name = input.required<string>();
