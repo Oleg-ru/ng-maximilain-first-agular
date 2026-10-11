@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TaskType } from '../dummy-tasks';
+import { TaskType } from '../task.module';
 
 @Component({
   imports: [],
