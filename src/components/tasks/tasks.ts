@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {Task} from './task/task';
 import {DUMMY_TASKS} from './dummy-tasks';
-import {TaskType} from "./task.module";
+import { NewTaskType, TaskType } from './task.module';
 import { NewTask } from './new-task/new-task';
 
 @Component({
@@ -35,8 +35,17 @@ export class Tasks {
     this.isAddingTask = false;
   }
 
-  onAddNewTask(task: TaskType) {
-    this.tasks = [...this.tasks, task];
-    this.onCloseAddTaskModal();
+  onAddNewTask(newTask: NewTaskType) {
+    if (this.userId) {
+      this.tasks = [
+        ...this.tasks,
+        {
+          ...newTask,
+          id: crypto.randomUUID(),
+          userId: this.userId,
+        },
+      ];
+      this.onCloseAddTaskModal();
+    }
   }
 }
