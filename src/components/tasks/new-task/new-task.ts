@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './new-task.css',
   templateUrl: './new-task.html',
 })
-export class NewTask {}
+export class NewTask {
+  @Output() closeModal = new EventEmitter<boolean>();
+
+  onCloseModal() {
+    this.closeModal.emit(true);
+  }
+}

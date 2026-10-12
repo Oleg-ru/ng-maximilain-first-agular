@@ -30,4 +30,8 @@ export class Tasks {
   onStartAddTask() {
     this.isAddingTask = true;
   }
+
+  onCloseAddTaskModal() {
+    this.isAddingTask = false;
+  }
 }
