@@ -34,4 +34,9 @@ export class Tasks {
   onCloseAddTaskModal() {
     this.isAddingTask = false;
   }
+
+  onAddNewTask(task: TaskType) {
+    this.tasks = [...this.tasks, task];
+    this.onCloseAddTaskModal();
+  }
 }
