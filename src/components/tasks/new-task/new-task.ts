@@ -16,4 +16,8 @@ export class NewTask {
   onCloseModal() {
     this.closeModal.emit();
   }
+
+  onSubmit() {
+
+  }
 }
