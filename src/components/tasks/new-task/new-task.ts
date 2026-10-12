@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NewTaskType, TaskType } from '../task.module';
+import { NewTaskType } from '../task.module';
 
 @Component({
   imports: [FormsModule],
