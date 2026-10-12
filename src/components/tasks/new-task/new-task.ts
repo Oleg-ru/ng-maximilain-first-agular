@@ -7,9 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './new-task.html',
 })
 export class NewTask {
-  @Output() closeModal = new EventEmitter<boolean>();
+  @Output() closeModal = new EventEmitter<void>();
 
   onCloseModal() {
-    this.closeModal.emit(true);
+    this.closeModal.emit();
   }
 }
