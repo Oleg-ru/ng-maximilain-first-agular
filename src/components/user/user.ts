@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { UserType } from './user.model';
+import { Card } from '../../shared/card/card';
 
 @Component({
-  imports: [],
+  imports: [Card],
   selector: 'app-user',
   styleUrl: './user.css',
   templateUrl: './user.html',
 })
 export class User {
   @Input({ required: true }) user!: UserType;
-  @Input({required: true}) selected!: boolean;
+  @Input({ required: true }) selected!: boolean;
 
   // avatar = input.required<string>();
   // name = input.required<string>();
