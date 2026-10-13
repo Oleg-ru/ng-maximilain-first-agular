@@ -1,7 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Task} from './task/task';
-import {DUMMY_TASKS} from './dummy-tasks';
-import { NewTaskType, TaskType } from './task.module';
 import { NewTask } from './new-task/new-task';
 import { TaskService } from './task-service';
 
@@ -13,22 +11,18 @@ import { TaskService } from './task-service';
 })
 export class Tasks {
   @Input({ required: true }) name?: string;
-  @Input({ required: true }) userId?: string;
+  @Input({ required: true }) userId!: string;
 
   isAddingTask = false;
-
-
-  tasks: TaskType[] = [...DUMMY_TASKS];
 
   constructor(private tasksService: TaskService) {}
 
   getUserTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId);
+    return this.tasksService.getUserTasks(this.userId);
   }
 
-  onCompleteTask(id: String) {
-    this.tasks = this.tasks.filter((task) => task.id !== id);
-    console.log(this.tasks);
+  onCompleteTask(id: string) {
+    this.tasksService.removeTask(id);
   }
 
   onStartAddTask() {
@@ -37,19 +31,5 @@ export class Tasks {
 
   onCloseAddTaskModal() {
     this.isAddingTask = false;
-  }
-
-  onAddNewTask(newTask: NewTaskType) {
-    if (this.userId) {
-      this.tasks = [
-        ...this.tasks,
-        {
-          ...newTask,
-          id: crypto.randomUUID(),
-          userId: this.userId,
-        },
-      ];
-      this.onCloseAddTaskModal();
-    }
   }
 }
