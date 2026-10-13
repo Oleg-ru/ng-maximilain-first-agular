@@ -1,7 +1,7 @@
-import { Service } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { NewTaskType } from './task.module';
 
-@Service()
+@Injectable({providedIn: "root"})
 export class TaskService {
   private tasks = [
     {

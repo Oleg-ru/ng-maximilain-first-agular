@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import {Task} from './task/task';
 import {DUMMY_TASKS} from './dummy-tasks';
 import { NewTaskType, TaskType } from './task.module';
 import { NewTask } from './new-task/new-task';
+import { TaskService } from './task-service';
 
 @Component({
   imports: [Task, NewTask],
@@ -16,7 +17,10 @@ export class Tasks {
 
   isAddingTask = false;
 
+
   tasks: TaskType[] = [...DUMMY_TASKS];
+
+  constructor(private tasksService: TaskService) {}
 
   getUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
